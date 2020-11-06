@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Redmap.Redshift</name>
+    </assembly>
+    <members>
+        <member name="T:Redmap.Events.Common.CommonClass">
+            <summary>
+            Class with common functions.
+            </summary>
+        </member>
+        <member name="M:Redmap.Events.Common.CommonClass.ChangeDateFormat(System.String)">
+            <summary>
+            Change Date Format
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Redmap.Events.Common.CommonClass.GetConnectionString(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Get connection string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Redmap.Events.Common.CommonClass.VerifyQuery(System.String)">
+            <summary>
+            Verify sql injection
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Redmap.Events.Logging.ErrorDetails">
+            <summary>
+            Error Detail Model
+            </summary>
+        </member>
+        <member name="P:Redmap.Events.Logging.ErrorDetails.StatusCode">
+            <summary>
+            Status Code
+            </summary>
+        </member>
+        <member name="P:Redmap.Events.Logging.ErrorDetails.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="M:Redmap.Events.Logging.ErrorDetails.ToString">
+            <summary>
+            String json JsonSerializer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Redmap.Events.Logging.ExceptionMiddlewareExtension">
+            <summary>
+            Exception Middleware Extension
+            </summary>
+        </member>
+        <member name="M:Redmap.Events.Logging.ExceptionMiddlewareExtension.ConfigureExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder,Redmap.Events.Services.Interface.ILogService)">
+            <summary>
+            Configure Exception Handler
+            </summary>
+            <param name="app"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="T:Redmap.Events.Program">
+            <summary>
+            Program class
+            </summary>
+        </member>
+        <member name="M:Redmap.Events.Program.Main(System.String[])">
+            <summary>
+            main method
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Redmap.Events.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            CreateWebHostBuilder method
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Redmap.Events.Repository.RedshiftRepository">
+            <summary>
+            Redshift Repository
+            </summary>
+        </member>
+        <member name="M:Redmap.Events.Repository.RedshiftRepository.#ctor(Microsoft.Extensions.Options.IOptions{Redmap.Redshift.Model.AppSettings})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="settings"></param>
+        </member>
+        <member name="M:Redmap.Events.Repository.RedshiftRepository.SaveRedshiftData(Redmap.Redshift.Model.TableColumnModel)">
+            <summary>
+            Save redshift data 
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:Redmap.Events.Repository.RedshiftRepository.DeleteRedshiftData(Redmap.Redshift.Model.TableColumnModel,System.String)">
+            <summary>
+            Delete redshift data
+            </summary>
+            <param name="model"></param>
+            <param name="sqlquery"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Redmap.Events.Services.AutoMapperProfile.MappingProfile">
+             <summary>
+            Mapping Profile Class
+             </summary>
+        </member>
+        <member name="M:Redmap.Events.Services.AutoMapperProfile.MappingProfile.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Redmap.Events.Services.Interface.ILogService">
+             <summary>
+            Log Service Interface
+             </summary>
+        </member>
+        <member name="M:Redmap.Events.Services.Interface.ILogService.Information(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Redmap.Events.Services.Interface.ILogService.Warning(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Redmap.Events.Services.Interface.ILogService.Debug(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Redmap.Events.Services.Interface.ILogService.Error(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:Redmap.Events.Services.LogNLogService">
+            <summary>
+            LogNLogService class
+            </summary>
+        </member>
+        <member name="M:Redmap.Events.Services.LogNLogService.#ctor">
+            <summary>
+            LogNLogService Constructor
+            </summary>
+        </member>
+        <member name="M:Redmap.Events.Services.LogNLogService.Information(System.String)">
+            <summary>
+            Get Log Information
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Redmap.Events.Services.LogNLogService.Warning(System.String)">
+            <summary>
+            Get Log Warning
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Redmap.Events.Services.LogNLogService.Debug(System.String)">
+            <summary>
+            Get Log Debug
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Redmap.Events.Services.LogNLogService.Error(System.String)">
+            <summary>
+            Get Log Error
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:Redmap.Events.Services.RedshiftService">
+            <summary>
+            Redshift Service
+            </summary>
+        </member>
+        <member name="M:Redmap.Events.Services.RedshiftService.#ctor(Redmap.Redshift.Repository.Interface.IRedshiftRepository,Microsoft.AspNetCore.Hosting.IHostingEnvironment,AutoMapper.IMapper,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            redshift service
+            </summary>
+            <param name="redshiftRepository"></param>
+            <param name="hostingEnvironment"></param>
+            <param name="mapper"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Redmap.Events.Services.RedshiftService.SaveRedshiftData(Redmap.Redshift.DTO.TableColumnDto)">
+            <summary>
+            Save redshift data.
+            </summary>
+            <param name="modelDto"></param>
+        </member>
+        <member name="M:Redmap.Events.Services.RedshiftService.DeleteRedshiftData(Redmap.Redshift.DTO.TableColumnDto)">
+            <summary>
+            Delete Redshift Data
+            </summary>
+            <param name="dtoModel"></param>        
+        </member>
+        <member name="T:Redmap.Events.Startup">
+            <summary>
+            Startup Class
+            </summary>
+        </member>
+        <member name="M:Redmap.Events.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup Constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Redmap.Events.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:Redmap.Events.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Redmap.Events.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Redmap.Events.Services.Interface.ILogService)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="logger"></param>       
+        </member>
+        <member name="T:Redmap.Redshift.Common.DataTypes">
+            <summary>
+            Data types 
+            </summary>
+        </member>
+        <member name="T:Redmap.Redshift.Controllers.RedshiftController">
+            <summary>
+            Log Controller
+            </summary>
+        </member>
+        <member name="M:Redmap.Redshift.Controllers.RedshiftController.#ctor(Redmap.Redshift.Services.Interface.IRedshiftService)">
+            <summary>
+            Redshift Controller Constructer
+            </summary>
+            <param name="redshiftService"></param>
+        </member>
+        <member name="M:Redmap.Redshift.Controllers.RedshiftController.PostDataOnRedshift(Redmap.Redshift.DTO.TableColumnDto)">
+            <summary>
+            Post data on redshift database
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Redmap.Redshift.Controllers.RedshiftController.DeleteRedshiftData(Redmap.Redshift.DTO.TableColumnDto)">
+            <summary>
+            Delete redshift record by dynamic parameter.
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="T:Redmap.Redshift.DTO.BadChars">
+             <summary>
+            Collection of bad characters
+             </summary>
+        </member>
+        <member name="F:Redmap.Redshift.DTO.BadChars.badChars">
+            <summary>
+            Bad character array.
+            </summary>
+        </member>
+        <member name="F:Redmap.Redshift.DTO.BadChars.badCommands">
+            <summary>
+            Bad commands array.
+            </summary>
+        </member>
+        <member name="T:Redmap.Redshift.DTO.ResponseModelDto">
+            <summary>
+            Response modle class.
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.DTO.ResponseModelDto.StatusCode">
+            <summary>
+            Status code
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.DTO.ResponseModelDto.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.DTO.ResponseModelDto.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="T:Redmap.Redshift.DTO.TableColumnDto">
+            <summary>
+            Table Column Dto
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.DTO.TableColumnDto.TableName">
+            <summary>
+            Table Name
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.DTO.TableColumnDto.ColumnsList">
+            <summary>
+            Columns List
+            </summary>
+        </member>
+        <member name="T:Redmap.Redshift.DTO.Columns">
+            <summary>
+            Columns
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.DTO.Columns.ColumnName">
+            <summary>
+            Column Name
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.DTO.Columns.ColumnValue">
+            <summary>
+            Column Value
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.DTO.Columns.DataType">
+            <summary>
+            Data Type
+            </summary>
+        </member>
+        <member name="T:Redmap.Redshift.Model.AppSettings">
+            <summary>
+            AppSettings
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.AppSettings.ServerName">
+            <summary>
+            Server name
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.AppSettings.Port">
+            <summary>
+            Port number
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.AppSettings.UserName">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.AppSettings.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.AppSettings.Database">
+            <summary>
+            Database
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.AppSettings.SiteUrl">
+            <summary>
+            Site Url
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.AppSettings.ErrorLoggingUrl">
+            <summary>
+            Error Logging Url
+            </summary>
+        </member>
+        <member name="T:Redmap.Redshift.Model.TableColumnModel">
+            <summary>
+            Table Column 
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.TableColumnModel.TableName">
+            <summary>
+            Table Name
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.TableColumnModel.ColumnsList">
+            <summary>
+            Columns List
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.TableColumnModel.ColumnName">
+            <summary>
+            Column Name
+            </summary>
+        </member>
+        <member name="P:Redmap.Redshift.Model.TableColumnModel.ColumnValue">
+            <summary>
+            Column Value
+            </summary>
+        </member>
+        <member name="T:Redmap.Redshift.Repository.Interface.IRedshiftRepository">
+            <summary>
+            Event message repository interface
+            </summary>
+        </member>
+        <member name="M:Redmap.Redshift.Repository.Interface.IRedshiftRepository.SaveRedshiftData(Redmap.Redshift.Model.TableColumnModel)">
+            <summary>
+            Save redshift data.
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:Redmap.Redshift.Repository.Interface.IRedshiftRepository.DeleteRedshiftData(Redmap.Redshift.Model.TableColumnModel,System.String)">
+            <summary>
+            Delete redshift data
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="T:Redmap.Redshift.Services.Interface.IRedshiftService">
+             <summary>
+            Event message service interface.
+             </summary>
+        </member>
+        <member name="M:Redmap.Redshift.Services.Interface.IRedshiftService.SaveRedshiftData(Redmap.Redshift.DTO.TableColumnDto)">
+            <summary>
+            Save Redshift Data
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Redmap.Redshift.Services.Interface.IRedshiftService.DeleteRedshiftData(Redmap.Redshift.DTO.TableColumnDto)">
+            <summary> 
+            Delete redshift data
+            </summary>
+            <param name="model"></param>
+        </member>
+    </members>
+</doc>
